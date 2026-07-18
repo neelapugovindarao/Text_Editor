@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter as tk  #importing the tkinter module
 from tkinter import filedialog # lib for from tkinter
 
 root = tk.Tk()
