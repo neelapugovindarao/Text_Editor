@@ -9,5 +9,12 @@ root.geometry("650x500")
 #Text area + scorllbar
 frame = tk.Frame(root)
 
+frame.pack(expand = True , fill = "both")
+
+scrollbar = tk.Scrollbar(frame)
+
+scrollbar.pack(side = "right" , fill = "y")
+
+
 root.mainloop()
 
