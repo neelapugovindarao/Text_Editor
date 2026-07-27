@@ -38,5 +38,11 @@ text_area.bind("<KeyRelease>", update_status)
 text_area.bind("<ButtonRelease>", update_status)
 
 
+def mark_modified(event=None):
+    if not root.title().startswith("*"):
+        root.title("*" + root.title())
+
+
+
 root.mainloop()
 
