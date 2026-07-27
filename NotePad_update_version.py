@@ -34,6 +34,8 @@ def update_status(event=None):
     status_bar.config(text=f"Ln {line}, Col {int(col)+1}")
 
 
+text_area.bind("<KeyRelease>", update_status)
+text_area.bind("<ButtonRelease>", update_status)
 
 
 root.mainloop()
