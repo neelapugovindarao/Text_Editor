@@ -28,6 +28,10 @@ status_bar = tk.Label(root , text ="Ln 1 , col 1",padx =10,anchor = "e" , relief
 
 status_bar.pack(side = "bottom" , fill = "x")
 
+def update_status(event=None):
+    pos = text_area.index(tk.INSERT)
+    line, col = pos.split(".")
+    status_bar.config(text=f"Ln {line}, Col {int(col)+1}")
 
 
 
