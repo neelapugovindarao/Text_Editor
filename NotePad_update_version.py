@@ -54,6 +54,14 @@ def open_file(event=None):
     path = filedialog.askopenfilename(
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
     )
+      if path:
+        with open(path, "r") as f:
+            text_area.delete("1.0", tk.END)
+            text_area.insert(tk.END, f.read())
+        current_file = path
+        update_title(path)
+        text_area.edit_reset()       # Clear undo history after fresh open
+
 
 
 
