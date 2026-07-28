@@ -43,6 +43,13 @@ def mark_modified(event=None):
         root.title("*" + root.title())
 
 
+def update_title(path):
+    root.title(path.split("/")[-1] + " — Text Editor")
+
+text_area.bind("<<Modified>>", mark_modified)
+
+
+
 
 root.mainloop()
 
