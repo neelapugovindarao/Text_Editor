@@ -60,7 +60,7 @@ def open_file(event=None):
             text_area.insert(tk.END, f.read())
         current_file = path
         update_title(path)
-        text_area.edit_reset()       # Clear undo history after fresh open
+        text_area.edit_reset()    # Clear undo history after fresh open
 
 
 
