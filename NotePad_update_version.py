@@ -48,6 +48,12 @@ def update_title(path):
 
 text_area.bind("<<Modified>>", mark_modified)
 
+# ── File Operations ────────────────────────────────────────────────────────────
+def open_file(event=None):
+    global current_file
+    path = filedialog.askopenfilename(
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+    )
 
 
 
