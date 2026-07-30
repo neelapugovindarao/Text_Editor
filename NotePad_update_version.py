@@ -62,6 +62,11 @@ def open_file(event=None):
         update_title(path)
         text_area.edit_reset()    # Clear undo history after fresh open
 
+def save(event=None):
+    global current_file
+    path = current_file or filedialog.asksaveasfilename(
+        defaultextension=".txt",
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
 
 
 
