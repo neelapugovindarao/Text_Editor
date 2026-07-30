@@ -74,7 +74,10 @@ def save(event=None):
                 f.write(text_area.get("1.0", tk.END).rstrip())
             current_file = path
             update_title(path)
-    
+          
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not save:\n{e}")
+
 
 
 
