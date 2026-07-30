@@ -68,6 +68,14 @@ def save(event=None):
         defaultextension=".txt",
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
 
+      if path:
+        try:
+            with open(path, "w") as f:
+                f.write(text_area.get("1.0", tk.END).rstrip())
+            current_file = path
+            update_title(path)
+    
+
 
 
 root.mainloop()
