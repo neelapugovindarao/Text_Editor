@@ -92,6 +92,15 @@ def clear(event=None):
     root.title("Text Editor")
 
 
+def on_exit():
+    if root.title().startswith("*"):
+        ans = messagebox.askyesnocancel("Unsaved Changes", "Save before exiting?")
+        if ans is None:
+            return
+        if ans:
+            save()
+    root.quit()
+
 
 
 
