@@ -79,6 +79,14 @@ def save(event=None):
             messagebox.showerror("Error", f"Could not save:\n{e}")
 
 
+def save_as(event=None):
+    global current_file
+    current_file = None
+    save()
+
+
+
+
 
 
 root.mainloop()
