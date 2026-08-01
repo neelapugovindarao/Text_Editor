@@ -85,6 +85,14 @@ def save_as(event=None):
     save()
 
 
+def clear(event=None):
+    global current_file
+    text_area.delete("1.0", tk.END)
+    current_file = None
+    root.title("Text Editor")
+
+
+
 
 
 
