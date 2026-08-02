@@ -107,6 +107,12 @@ def cut(event=None):
         text_area.event_generate("<<Cut>>")
 
 
+def copy(event=None):
+    if text_area.tag_ranges("sel"):
+        text_area.event_generate("<<Copy>>")
+
+
+
 
 
 
