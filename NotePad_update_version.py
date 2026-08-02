@@ -112,6 +112,14 @@ def copy(event=None):
         text_area.event_generate("<<Copy>>")
 
 
+def undo(event=None):
+    try:
+        text_area.edit_undo()
+    except tk.TclError:
+        pass          # Nothing left to undo
+
+
+
 
 
 
