@@ -101,6 +101,10 @@ def on_exit():
             save()
     root.quit()
 
+# ── Edit Operations ────────────────────────────────────────────────────────────
+def cut(event=None):
+    if text_area.tag_ranges("sel"):
+        text_area.event_generate("<<Cut>>")
 
 
 
