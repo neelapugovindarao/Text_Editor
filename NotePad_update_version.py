@@ -119,6 +119,15 @@ def undo(event=None):
         pass          # Nothing left to undo
 
 
+def redo(event=None):
+    try:
+        text_area.edit_redo()
+    except tk.TclError:
+        pass          # Nothing left to redo
+
+
+
+
 
 
 
