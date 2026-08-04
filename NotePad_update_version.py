@@ -137,6 +137,19 @@ def select_all(event=None):
 
 
 
+# ── Find & Replace Window ──────────────────────────────────────────────────────
+def find_replace(event=None):
+    win = tk.Toplevel(root)
+    win.title("Find & Replace")
+    win.geometry("370x130")
+    win.resizable(False, False)
+    win.transient(root)      # Stay on top of main window
+    win.grab_set()
+
+
+
+
+
 
 
 
