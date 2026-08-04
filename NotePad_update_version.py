@@ -125,6 +125,16 @@ def redo(event=None):
     except tk.TclError:
         pass          # Nothing left to redo
 
+def redo(event=None):
+    try:
+        text_area.edit_redo()
+    except tk.TclError:
+        pass          # Nothing left to redo
+
+def select_all(event=None):
+    text_area.tag_add("sel", "1.0", tk.END)
+    return "break"   # Prevent default so it doesn't type 'a'
+
 
 
 
