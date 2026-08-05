@@ -146,6 +146,14 @@ def find_replace(event=None):
     win.transient(root)      # Stay on top of main window
     win.grab_set()
 
+    tk.Label(win, text="Find:",    width=8, anchor="e").grid(row=0, column=0, padx=6, pady=8)
+    tk.Label(win, text="Replace:", width=8, anchor="e").grid(row=1, column=0, padx=6, pady=4)
+
+    find_var    = tk.StringVar()
+    replace_var = tk.StringVar()
+
+
+
 
 
 
