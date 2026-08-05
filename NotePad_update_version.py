@@ -152,6 +152,13 @@ def find_replace(event=None):
     find_var    = tk.StringVar()
     replace_var = tk.StringVar()
 
+    find_entry    = tk.Entry(win, textvariable=find_var,    width=28)
+    replace_entry = tk.Entry(win, textvariable=replace_var, width=28)
+    find_entry.grid(row=0, column=1, columnspan=2, padx=4)
+    replace_entry.grid(row=1, column=1, columnspan=2, padx=4)
+    find_entry.focus()
+
+
 
 
 
