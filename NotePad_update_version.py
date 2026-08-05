@@ -158,17 +158,25 @@ def find_replace(event=None):
     replace_entry.grid(row=1, column=1, columnspan=2, padx=4)
     find_entry.focus()
 
+    info_label = tk.Label(win, text="", fg="gray")
+    info_label.grid(row=3, column=0, columnspan=3, pady=2)
 
-
-
-
-
-
-
-
-
-
-
+    def do_find():
+        text_area.tag_remove("found", "1.0", tk.END)
+        needle = find_var.get()
+        if not needle:
+            return
+        count, start = 0, "1.0"
+        while True:
+            idx = text_area.search(needle, start, nocase=True, stopindex=tk.END)
+            if not idx:
+                break
+            end = f"{idx}+{len(needle)}c"
+            text_area.tag_add("found", idx, end)
+            start = end
+            count += 1
+        text_area.tag_config("found", background="yellow", foreground="black")
+        info_label.config(text=f"{count} match(es) found")
 
 
 root.mainloop()
