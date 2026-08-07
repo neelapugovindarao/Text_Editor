@@ -179,5 +179,20 @@ def find_replace(event=None):
         info_label.config(text=f"{count} match(es) found")
 
 
+    def do_replace_all():
+        needle = find_var.get()
+        replacement = replace_var.get()
+        if not needle:
+            return
+        content = text_area.get("1.0", tk.END)
+        new_content = content.replace(needle, replacement)
+        replaced = content.count(needle)
+        text_area.delete("1.0", tk.END)
+        text_area.insert("1.0", new_content)
+        text_area.tag_remove("found", "1.0", tk.END)
+        info_label.config(text=f"{replaced} replacement(s) made")
+
+
+
 root.mainloop()
 
