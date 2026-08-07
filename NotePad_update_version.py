@@ -24,9 +24,6 @@ scrollbar.configure(command = text_area.yview)
 menu_bar = tk.Menu(root)
 root.config(menu=menu_bar)
 
-# File menu
-file_menu = tk.Menu(menu_bar, tearoff=0)
-menu_bar.add_cascade(label="File",menu=file_menu)
 
 
 # ── Status Bar 
@@ -214,6 +211,18 @@ root.bind("<Control-z>", undo)
 root.bind("<Control-y>", redo)
 root.bind("<Control-a>", select_all)
 root.bind("<Control-h>", find_replace)
+
+
+# File menu
+file_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="File",menu=file_menu)
+file_menu.add_command(label="Open",  command=open_file, accelerator="Ctrl+O")
+file_menu.add_command(label="Save",   command=save,  accelerator="Ctrl+S")
+file_menu.add_command(label="Save As…",   command=save_as,  accelerator="Ctrl+Shift+S")
+file_menu.add_separator()
+file_menu.add_command(label="Clear", command=clear)
+
+
 
 
 root.mainloop()
