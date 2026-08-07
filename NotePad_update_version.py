@@ -21,6 +21,14 @@ text_area.pack(expand = True , fill = "both")
 
 scrollbar.configure(command = text_area.yview)
 
+menu_bar = tk.Menu(root)
+root.config(menu=menu_bar)
+
+# File menu
+file_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="File",menu=file_menu)
+
+
 # ── Status Bar 
 
 status_bar = tk.Label(root , text ="Ln 1 , col 1",padx =10,anchor = "e" , relief= "sunken",
