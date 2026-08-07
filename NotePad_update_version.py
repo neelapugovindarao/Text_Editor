@@ -193,6 +193,10 @@ def find_replace(event=None):
         info_label.config(text=f"{replaced} replacement(s) made")
 
 
+    
+    tk.Button(win, text="Find All",   command=do_find,  width=12).grid(row=2, column=0, pady=8, padx=4)
+    tk.Button(win, text="Replace All",command=do_replace_all, width=12).grid(row=2, column=1, pady=8, padx=4)
+    tk.Button(win, text="Close",  command=win.destroy,width=8 ).grid(row=2, column=2, pady=8, padx=4)
 
 root.mainloop()
 
