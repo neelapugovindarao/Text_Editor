@@ -198,5 +198,15 @@ def find_replace(event=None):
     tk.Button(win, text="Replace All",command=do_replace_all, width=12).grid(row=2, column=1, pady=8, padx=4)
     tk.Button(win, text="Close",  command=win.destroy,width=8 ).grid(row=2, column=2, pady=8, padx=4)
 
+
+root.bind("<Control-o>", open_file)
+root.bind("<Control-s>", save)
+root.bind("<Control-S>", save_as)      # Ctrl+Shift+S
+root.bind("<Control-z>", undo)
+root.bind("<Control-y>", redo)
+root.bind("<Control-a>", select_all)
+root.bind("<Control-h>", find_replace)
+
+
 root.mainloop()
 
